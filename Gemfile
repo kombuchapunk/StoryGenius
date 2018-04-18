@@ -38,7 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'jquery-rails'
 
-gem 'image_suckr'
+gem 'faker'
 
 group :development, :test do
   gem 'rspec-rails'
