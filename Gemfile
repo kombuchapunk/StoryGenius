@@ -38,6 +38,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'jquery-rails'
 
+gem 'image_suckr'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'launchy'
