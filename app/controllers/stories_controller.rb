@@ -1,6 +1,6 @@
 require 'faker'
 require 'image_searcher'
-
+$current_user
 class StoriesController < ApplicationController
   def index
     @stories = Story.all
@@ -8,8 +8,9 @@ class StoriesController < ApplicationController
   end
 
   def show
-
     @story = Story.find(params[:id])
+    @sentences = @story.sentences.all
+    @sentence = @story.sentences.new
     render :show
   end
 

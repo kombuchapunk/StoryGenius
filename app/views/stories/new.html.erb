@@ -5,7 +5,7 @@
 <%= form_for @story do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
-  
+
   <%= f.hidden_field :imgLink, :value => @random_img%>
   <%= f.submit  %>
 <% end %>

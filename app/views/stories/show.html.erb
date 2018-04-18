@@ -1,4 +1,17 @@
 <h1><%= @story.name %></h1>
+<img src=<%= @story.imgLink %> >
+
+<% @sentences.each do |sentence| %>
+  <p><%= sentence.words %></p>
+<% end %>
+
+<%= form_for [@story, @sentence] do |f| %>
+  <%= f.label "New Sentence:" %>
+  <%= f.text_field :words %>
+  <%= f.label "User Key:" %>
+  <%= f.text_field :user_id %>
+  <p><%= f.submit %></p>
+<% end %>
 
 <p><%= link_to "Delete", story_path(@story),
                          :data => {:confirm => "You sure?",

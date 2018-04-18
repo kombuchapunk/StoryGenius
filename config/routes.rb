@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  resources :stories
+  resources :stories do
+    resources :sentences
+  end
 end
