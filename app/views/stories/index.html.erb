@@ -1,5 +1,5 @@
 <h1>Stories</h1>
-
+<%= link_to "New Story", new_story_path %>
 <ul>
   <% @stories.each do |story| %>
     <li><%= link_to story.name, story_path(story) %></li>
