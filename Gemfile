@@ -40,6 +40,8 @@ gem 'jquery-rails'
 
 gem 'faker'
 
+gem 'image_searcher', '~> 0.1.5'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'launchy'
