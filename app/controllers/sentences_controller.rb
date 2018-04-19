@@ -2,11 +2,18 @@ class SentencesController < ApplicationController
 
   def create
     @story = Story.find(params[:story_id])
-    user = User.where( :username => "Nicko")
-    @user_id = user[0].id
     @sentence = @story.sentences.new(sentence_params)
     @sentence.save
     redirect_to story_path(@story)
+  end
+
+  def show
+    @story = Story.find(params[:story_id])
+    @sentence = Sentence.find(params[:id])
+    @sentences = @story.sentences.all
+    @new_sentence = @story.sentences.new
+    @comments = @sentence.comments
+    @new_comment = Comment.new
   end
 
   private

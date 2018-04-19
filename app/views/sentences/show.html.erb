@@ -1,0 +1,18 @@
+<%= render "shared/story" %>
+<div id="sidebar" style="float:right;">
+  <ul>
+    <% @comments.each do |comment| %>
+      <li><%= comment.words %></li>
+      <li><%= comment.user.username %></li>
+    <% end %>
+  </ul>
+
+  <%= form_for [@sentence, @new_comment] do |f| %>
+    <%= f.label "New Comment:" %>
+    <%= f.text_field :words %>
+    <%= f.label "User Key:" %>
+    <%= f.text_field :user_id %>
+    <p><%= f.submit %></p>
+  <% end %>
+
+</div>

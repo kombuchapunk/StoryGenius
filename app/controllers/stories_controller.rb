@@ -1,6 +1,6 @@
-require 'faker'
+require 'urss'
 require 'image_searcher'
-$current_user
+
 class StoriesController < ApplicationController
   def index
     @stories = Story.all
@@ -10,15 +10,15 @@ class StoriesController < ApplicationController
   def show
     @story = Story.find(params[:id])
     @sentences = @story.sentences.all
-    @sentence = @story.sentences.new
+    @new_sentence = @story.sentences.new
     render :show
   end
 
   def new
     @story = Story.new
     random_word = Faker::Hipster.unique.word
-    random_img = ImageSearcher::Client.new.search(query: random_word, count: 1)
-    @random_img = random_img[0]["url"]
+    rss = Urss.at("http://www.flickr.com/services/feeds/photos_public.gne?format=rss_200")
+    @random_img = rss.entries.first.medias.first.content_url
     render :new
   end
 
