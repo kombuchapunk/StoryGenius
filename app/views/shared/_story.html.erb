@@ -1,5 +1,5 @@
 <h1><%= @story.name %></h1>
-<img src=<%= @story.imgLink %> >
+<img class="story_image" src=<%= @story.imgLink %> >
 <p>
 <% @sentences.each do |sentence| %>
   <span><%= link_to sentence.words, story_sentence_path(@story, sentence) %>. </span>

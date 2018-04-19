@@ -9,10 +9,18 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= link_to "All Stories", stories_path %>
-    <%= link_to "New Story", new_story_path %>
-    <%= link_to "New User", new_user_path %>
+  <body> <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Logo</a>
+        <ul class="right hide-on-med-and-down">
+          <li><%= link_to "All Stories", stories_path %></li>
+          <li><%= link_to "New Story", new_story_path %></li>
+          <li><%= link_to "New User", new_user_path %></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
     <%= yield %>
   </body>
 </html>
