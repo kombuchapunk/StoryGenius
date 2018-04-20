@@ -1,0 +1,27 @@
+<h1>Stories</h1>
+
+<div class="wrapper">
+  <% @stories.each do |story| %>
+
+    <div class="card">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src=<%=story.imgLink%>>
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4"><%=story.name %><i class="material-icons right">more_vert</i></span>
+        <p><%= link_to "Read more", story_path(story) %></p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4"><%=story.name %><i class="material-icons right">close</i></span>
+        <p><%= story.getPreview %></p>
+        <p><%= link_to "Read more", story_path(story) %></p>
+      </div>
+    </div>
+
+  <% end %>
+</div>
+<div class="fixed-action-btn">
+
+    <%= link_to '<i class="add_button large material-icons">add</i>'.html_safe, new_story_path, class: "btn-floating btn-large red" %>
+
+</div>

@@ -12,7 +12,7 @@
   <body> <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">Logo</a>
+        <a href="/" class="brand-logo"><i class="material-icons logo-icon nav-logo">book</i></a>
         <ul class="right hide-on-med-and-down">
           <li><%= link_to "All Stories", stories_path %></li>
           <li><%= link_to "New Story", new_story_path %></li>
@@ -21,6 +21,8 @@
       </div>
     </nav>
   </div>
+  <div class="content">
     <%= yield %>
+  </div>
   </body>
 </html>

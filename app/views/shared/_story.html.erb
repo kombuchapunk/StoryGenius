@@ -1,19 +1,29 @@
-<h1><%= @story.name %></h1>
-<img class="story_image" src=<%= @story.imgLink %> >
-<p>
-<% @sentences.each do |sentence| %>
-  <span><%= link_to sentence.words, story_sentence_path(@story, sentence) %>. </span>
-<% end %>
-</p>
-<%= form_for [@story, @new_sentence] do |f| %>
-  <%= f.label "New Sentence:" %>
-  <%= f.text_field :words %>
-  <%= f.label "User Key:" %>
-  <%= f.text_field :user_id %>
-  <p><%= f.submit %></p>
-<% end %>
+<div class="row">
+  <div class="story-title"><%= @story.name %></div>
+</div>
+<div class="col s12 m12 l7 xl7">
+  <div class="card story-card">
+    <div class="square">
+      <img class="story-image" src=<%= @story.imgLink %> >
+    </div>
+    <p class="full_story">
+    <% @sentences.each do |sentence| %>
+      <%= link_to "#{sentence.words.capitalize}.", story_sentence_path(@story, sentence), class: "sentence" %>
+    <% end %>
+    </p>
+    <div class="card-form">
+      <%= form_for [@story, @new_sentence] do |f| %>
+        <%= f.label "New Sentence:" %>
+        <%= f.text_field :words %>
+        <%= f.label "User Key:" %>
+        <%= f.text_field :user_id %>
+        <p><%= f.submit class: "waves-effect waves-light btn-small btn-form"%></p>
+      <% end %>
+    </div>
 
-<p><%= link_to "Delete", story_path(@story),
-                         :data => {:confirm => "You sure?",
-                                   :method => "delete"} %></p>
-<p><%= link_to "Return to stories", stories_path %></p>
+    <!-- <p><%= link_to "Delete", story_path(@story),
+                             :data => {:confirm => "You sure?",
+                                       :method => "delete"} %></p> -->
+    <!-- <p><%= link_to "Return to stories", stories_path %></p> -->
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<h1>Stories</h1>
+
+<div class="row">
+  <div class="col s4">
+    <% (0..@stories.length - 1).step(3).each do |i|%>
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src=<%=@stories[i].imgLink%>>
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4"><%=@stories[i].name %><i class="material-icons right">more_vert</i></span>
+          <p><%= link_to "Read more", story_path(@stories[i]) %></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"><%=@stories[i].name %><i class="material-icons right">close</i></span>
+          <p><%= @stories[i].getPreview %></p>
+          <p><%= link_to "Read more", story_path(@stories[i]) %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="col s4">
+    <% (1..@stories.length - 1).step(3).each do |i|%>
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src=<%=@stories[i].imgLink%>>
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4"><%=@stories[i].name %><i class="material-icons right">more_vert</i></span>
+          <p><%= link_to "Read more", story_path(@stories[i]) %></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"><%=@stories[i].name %><i class="material-icons right">close</i></span>
+          <p><%= @stories[i].getPreview %></p>
+          <p><%= link_to "Read more", story_path(@stories[i]) %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="col s4">
+    <% (2..@stories.length - 1).step(3).each do |i|%>
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src=<%=@stories[i].imgLink%>>
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4"><%=@stories[i].name %><i class="material-icons right">more_vert</i></span>
+          <p><%= link_to "Read more", story_path(@stories[i]) %></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"><%=@stories[i].name %><i class="material-icons right">close</i></span>
+          <p><%= @stories[i].getPreview %></p>
+          <p><%= link_to "Read more", story_path(@stories[i]) %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="fixed-action-btn">
+
+    <%= link_to '<i class="add_button large material-icons">add</i>'.html_safe, new_story_path, class: "btn-floating btn-large red" %>
+
+</div>

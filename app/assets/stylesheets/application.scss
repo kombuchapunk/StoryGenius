@@ -1,6 +1,6 @@
 @import "materialize/components/color-variables";
-$primary-color: color("green", "lighten-2") !default;
-$secondary-color: color("blue", "base") !default;
+$primary-color: color("yellow", "accent-4") !default;
+$secondary-color: color("yellow", "accent-4") !default;
 @import "materialize";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 
@@ -17,10 +17,40 @@ $small-and-down: "only screen and (max-width : #{$small-screen})" !default;
 $medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
 $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
 
+
 @mixin column-count($ct) {
   -webkit-column-count: $ct;
   -moz-column-count: $ct;
   column-count: $ct;
+}
+
+* {
+  color: #191505 !important;
+}
+
+body {
+  background-color: #F7F7F7;
+}
+
+nav {
+  padding-left: 5vw;
+  padding-right: 4vw;
+}
+.nav-logo{
+  font-size: 47px !important;
+}
+
+nav a{
+  color: #191505 !important;
+}
+
+.add-story-button{
+  background-color: $primary-color;
+}
+
+.content {
+  width: 90vw !important;
+  margin: 0 auto;
 }
 
 .cards-container {
@@ -29,6 +59,63 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
     display: inline-block;
     overflow: visible;
   }
+}
+
+#sidebar {
+  padding: 30px;
+}
+
+.square{
+
+  width: 100%;
+}
+.story-title{
+  color: #383636;
+  font-size: 3em;
+  font-weight: 500;
+  line-height: 1em;
+  margin-top: 30px;
+}
+
+.story-image{
+  display: block;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border: 10px solid #e5e3e3;
+}
+
+.story-card{
+  padding: 30px;
+  background-color: #fff;
+}
+
+.card-form {
+  padding: 30px;
+}
+
+.sentence {
+  color: #000;
+}
+
+.sentence:hover {
+  background-color: $primary-color;
+}
+
+.username{
+  font-size: 1.6em;
+}
+
+.new-form{
+  padding: 30px;
+}
+
+.new-content {
+  padding-left: 30px;
+}
+
+.btn-form {
+  margin-top: 20px;
 }
 
 @media #{$small-and-down} {
@@ -40,9 +127,25 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
   .cards-container {
     @include column-count(2);
   }
+  .content {
+    width: 90vw !important;
+  }
 }
 @media #{$large-and-up} {
   .cards-container {
     @include column-count(3);
+  }
+  .content {
+    width: 85vw !important;
+  }
+}
+@media screen and (min-width: 1201px) {
+  .content {
+    width: 80vw !important;
+  }
+}
+@media screen and (min-width: 1401px) {
+  .content {
+    width: 1300px !important;
   }
 }
