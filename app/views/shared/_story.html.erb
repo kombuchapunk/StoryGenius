@@ -15,8 +15,7 @@
       <%= form_for [@story, @new_sentence] do |f| %>
         <%= f.label "New Sentence:" %>
         <%= f.text_field :words %>
-        <%= f.label "User Key:" %>
-        <%= f.text_field :user_id %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
         <p><%= f.submit class: "waves-effect waves-light btn-small btn-form"%></p>
       <% end %>
     </div>

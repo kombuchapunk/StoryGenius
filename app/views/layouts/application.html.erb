@@ -16,7 +16,14 @@
         <ul class="right hide-on-med-and-down">
           <li><%= link_to "All Stories", stories_path %></li>
           <li><%= link_to "New Story", new_story_path %></li>
-          <li><%= link_to "New User", new_user_path %></li>
+          <% if !current_user %>
+            <li><%= link_to "SIGN UP", new_user_registration_path %></li>
+            <li><%= link_to "SIGN IN", new_user_session_path %></li>
+          <% end %>
+          <% if current_user %>
+            <li><%= link_to "SIGN OUT", destroy_user_session_path, :method => :delete %></li>
+          <% end %>
+
         </ul>
       </div>
     </nav>

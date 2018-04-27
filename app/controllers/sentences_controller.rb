@@ -2,6 +2,7 @@ class SentencesController < ApplicationController
 
   def create
     @story = Story.find(params[:story_id])
+    binding.pry
     @sentence = @story.sentences.new(sentence_params)
     @sentence.save
     redirect_to story_path(@story)

@@ -5,14 +5,14 @@
       <blockquote>
       <h3>"<%= @sentence.words.capitalize %>."</h3>
       <div class="chip">
-        <img src=<%= @sentence.user.imgLink%> alt="Contact Person">
+        <img src="http://www.futureisclean.org/img/profile-no-photo.png" alt="Contact Person">
         <%= @sentence.user.username%>
       </div>
       </blockquote>
       <ul class="collection">
         <% @comments.each do |comment| %>
           <li class="collection-item avatar">
-            <img src=<%=comment.user.imgLink%> alt="" class="circle">
+            <img src="http://www.futureisclean.org/img/profile-no-photo.png" alt="" class="circle">
             <p><span class="username"><%= comment.user.username %></span><br>
                <span class="comment"><%= comment.words %></span>
             </p>
@@ -23,8 +23,6 @@
       <%= form_for [@sentence, @new_comment] do |f| %>
         <%= f.label "New Comment:" %>
         <%= f.text_field :words %>
-        <%= f.label "User Key:" %>
-        <%= f.text_field :user_id %>
         <p><%= f.submit %></p>
       <% end %>
     </div>
